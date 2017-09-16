@@ -1,0 +1,26 @@
+Q1
+
+La classe File permet de representer un fichier sous java.
+Elle permet entre autres d'ouvrir, de creer, et de supprimer des fichiers.
+
+La classe FileReader permet de lire cractere par caratere un fichier.
+
+La classe BufferedReader est une extension de la classe FileReader.
+A l'aide d'un buffer (String temporaire), on peut implementer des methodes
+comme la lecture ligne par ligne.
+
+Q2
+
+On ferme le flux avec la methode close() de BufferedReader.
+
+Q3
+
+valeur = in.readline().split(" ");
+
+Q4
+
+
+
+Q5
+
+Interger.parseInt(String str)

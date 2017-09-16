@@ -1,0 +1,8 @@
+Q1
+
+C'est une classe que nous avons definit alors que NumberFormatExeption
+(qui peut etre raise dans Integer.decode) est une exception Runtime. Du coup pas besoin de preciser qu'elle peut etre raise
+
+Q2
+
+
