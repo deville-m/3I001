@@ -7,7 +7,11 @@ public class TestMatriceEntiere
 		try
 		{
 			MatriceEntiere test = new MatriceEntiere(new File("test.data"));
+			System.out.println("Original:");
 			test.print();
+			System.out.println("Transposed:");
+			MatriceEntiere test_transposed = test.transpose();
+			test_transposed.print();
 		}
 		catch (IOException e)
 		{
