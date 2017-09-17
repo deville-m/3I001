@@ -101,10 +101,11 @@ public class MatriceEntiere
 		return (mult);
 	}
 
-	public static MatriceEntiere sum(MatriceEntiere A, MatriceEntiere B) throws TailleNonConcordantesException
+	public static MatriceEntiere sum(MatriceEntiere A, MatriceEntiere B) throws TaillesNonConcordantesException
 	{
 		if (A.nbl != B.nbl || A.nbc != B.nbc)
-			throw new TailleNonConcordantesException("A et B doivent etre de meme dimensions.");
+			throw new TaillesNonConcordantesException("A et B doivent etre de meme dimensions.");
+
 		MatriceEntiere res = new MatriceEntiere(A.nbl, B.nbc);
 		int i = 0;
 		while (i < res.nbl)
@@ -113,6 +114,32 @@ public class MatriceEntiere
 			while (j < res.nbc)
 			{
 				res.matrix[i][j] = A.matrix[i][j] + B.matrix[i][j];
+				j++;
+			}
+			i++;
+		}
+		return (res);
+	}
+
+	public static MatriceEntiere multiply(MatriceEntiere A, MatriceEntiere B) throws TaillesNonConcordantesException
+	{
+		if (A.nbc != B.nbl)
+			throw new TaillesNonConcordantesException("A doit avoir le meme nombre de colonnes que le nombre de lignes de B");
+
+		MatriceEntiere res = new MatriceEntiere(A.nbl, B.nbc);
+		res.nullify();
+		int i = 0;
+		while (i < res.nbl)
+		{
+			int j = 0;
+			while (j < res.nbc)
+			{
+				int k = 0;
+				while (k < A.nbc)
+				{
+					res.matrix[i][j] += A.matrix[i][k] * B.matrix[k][j];
+					k++;
+				}
 				j++;
 			}
 			i++;
