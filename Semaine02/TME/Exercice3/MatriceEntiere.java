@@ -35,6 +35,16 @@ public class MatriceEntiere
 		}
 	}
 
+	public int getNbLignes()
+	{
+		return (nbl);
+	}
+
+	public int getNbColonnes()
+	{
+		return (nbc);
+	}
+
 	public int getElem(int i, int j) throws ArrayIndexOutOfBoundsException
 	{
 		return (matrix[i][j]);
@@ -145,6 +155,19 @@ public class MatriceEntiere
 			i++;
 		}
 		return (res);
+	}
+
+	public static int produitLigneColonne(MatriceEntiere m1, int i, MatriceEntiere m2, int j) throws TaillesNonConcordantesException
+	{
+		if (m1.nbc != m2.nbl)
+			throw new TaillesNonConcordantesException("A doit avoir le meme nombre de colonnes que le nombre de lignes de B");
+		int k = 0, somme = 0;
+		while (k < m1.nbc)
+		{
+			somme += m1.matrix[i][k] * m2.matrix[j][k];
+			k++;
+		}
+		return somme;
 	}
 
 	public String toString()
