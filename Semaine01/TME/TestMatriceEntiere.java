@@ -6,7 +6,7 @@ public class TestMatriceEntiere
 	{
 		if (args.length != 2 && args.length != 1)
 		{
-			System.out.println("Syntax : exec first matrix [second matrix]");
+			System.out.println("Syntax : exec first_matrix [second_matrix]");
 			return ;
 		}
 		try
