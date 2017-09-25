@@ -17,7 +17,8 @@ public class CalculElem implements Runnable {
 	{
 		try
 		{
-			m.setElem(i, j, MatriceEntiere.produitLigneColonne(m1, i, m2, j));
+			int product = MatriceEntiere.produitLigneColonne(m1, i, m2, j);
+			m.setElem(i, j, product);
 		}
 		catch (TaillesNonConcordantesException e)
 		{

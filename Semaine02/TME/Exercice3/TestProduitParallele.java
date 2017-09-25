@@ -23,7 +23,13 @@ public class TestProduitParallele
 				for(int j = 0; j < nbc; j++)
 				{
 					th[i][j] = new Thread(new CalculElem(res, matrix1, i, matrix2, j));
+					th[i][j].start();
 				}
+			}
+			for(int i = 0; i < nbl; i++)
+			{
+				for(int j = 0; j < nbc; j++)
+					th[i][j].join();
 			}
 			res.print();
 		}

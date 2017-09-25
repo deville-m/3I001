@@ -164,7 +164,7 @@ public class MatriceEntiere
 		int k = 0, somme = 0;
 		while (k < m1.nbc)
 		{
-			somme += m1.matrix[i][k] * m2.matrix[j][k];
+			somme += m1.matrix[i][k] * m2.matrix[k][j];
 			k++;
 		}
 		return somme;
