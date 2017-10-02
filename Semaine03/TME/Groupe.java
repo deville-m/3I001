@@ -1,16 +1,18 @@
-public class Groupe {
+public class Groupe implements Runnable {
 	private int id;
-	private int nb;
 	private static int cpt = 0;
+	private int nb;
+	private Salle s;
 
-	public Groupe(int nb)
+	public Groupe(int nb, Salle s)
 	{
 		this.nb = nb;
 		this.id = cpt++;
+		this.s = s;
 	}
 
-	public Groupe demande()
+	public void run()
 	{
-		return (this);
+		s.reserver(this.nb);
 	}
 }
