@@ -5,7 +5,7 @@ public class TestSalleGroupe {
 		Salle s = new Salle(50, 50);
 		for (int i = 0; i < 10; i++)
 		{
-			th[i] = new Thread(new Groupe(100, s));
+			th[i] = new Thread(new Groupe(23, s));
 		}
 		for (int i = 0; i < 10; i++)
 		{

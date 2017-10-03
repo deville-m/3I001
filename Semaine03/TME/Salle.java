@@ -32,7 +32,7 @@ public class Salle {
 
 		for(int j = 0; cpt < n && j < nbPlacesParRang; j++)
 		{
-			if (tableau[i][j])
+			if (!tableau[i][j])
 			{
 				cpt = 0;
 				deb = -1;
@@ -62,7 +62,7 @@ public class Salle {
 			capacite -= n;
 			while (n > 0)
 			{
-				tableau[i][deb] = true;
+				tableau[i][deb] = false;
 				deb++;
 				n--;
 			}
@@ -85,15 +85,20 @@ public class Salle {
 			{
 				for(int j = 0; j < nbPlacesParRang && n > 0; j++)
 				{
-					if (!tableau[i][j])
+					if (tableau[i][j])
 					{
-						tableau[i][j] = true;
+						tableau[i][j] = false;
 						n--;
 					}
 				}
 			}
 		}
 		return (true);
+	}
+
+	public synchronized void cancel(int rang, int place)
+	{
+		tableau[rang][place] = true;
 	}
 
 	public String toString()
