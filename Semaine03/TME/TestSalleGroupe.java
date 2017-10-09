@@ -20,7 +20,7 @@ public class TestSalleGroupe {
 		}
 		catch (InterruptedException e)
 		{
-			System.err.println("MAMA, I can't sleep.");
+			System.err.println("Mommy, I can't sleep.");
 		}
 		finally
 		{
